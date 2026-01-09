@@ -1,0 +1,35 @@
+{
+  "name": "stripe-migration",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Scripts for migrating Stripe subscriptions between accounts",
+  "main": "index.js",
+  "scripts": {
+    "export:customers": "node scripts/1-export-customers.js",
+    "export:products": "node scripts/2-export-products.js",
+    "export:subscriptions": "node scripts/3-export-subscriptions.js",
+    "export:all": "npm run export:customers && npm run export:products && npm run export:subscriptions",
+    "analyze": "node scripts/4-analyze-data.js",
+    "migrate:products": "node scripts/5-migrate-products.js",
+    "migrate:customers": "node scripts/6-migrate-customers.js",
+    "migrate:subscriptions": "node scripts/7-migrate-subscriptions.js",
+    "generate:payment-links": "node scripts/8-generate-payment-links.js",
+    "monitor:status": "node scripts/9-monitor-payment-status.js",
+    "test": "echo \"Run scripts in test mode by setting STRIPE_SECRET_KEY_OLD_TEST and STRIPE_SECRET_KEY_NEW_TEST\""
+  },
+  "keywords": [
+    "stripe",
+    "migration",
+    "subscriptions"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "stripe": "^14.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
