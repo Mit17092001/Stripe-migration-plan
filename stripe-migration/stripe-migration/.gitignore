@@ -1,0 +1,7 @@
+node_modules/
+.env
+.DS_Store
+exports/
+my-migration-data/
+test-connection.js
+example.js
